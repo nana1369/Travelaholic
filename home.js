@@ -42,55 +42,57 @@ class Home extends React.Component {
 
    <View style={styles.navbarContainer}>
 <TouchableHighlight style={styles.navButton}
-onPress={this.handleBasicPagePress}
->
+              onPress={() => this.props.navigation.navigate('Na')}
+            >
 <Text style={styles.navButtonText}>
 N.A.
 </Text>
 </TouchableHighlight>
+
 <TouchableHighlight style={styles.navButton1}
-onPress={this.handleInfoPagePress}
+onPress={() => this.props.navigation.navigate('Sa')}
 >
 <Text style={styles.navButtonText}>
 S.A.
 </Text>
 </TouchableHighlight>
 <TouchableHighlight style={styles.navButton2}
-onPress={this.handleRewardsPagePress}
+onPress={() => this.props.navigation.navigate('Eu')}
 >
 <Text style={styles.navButtonText}>
 EU
 </Text>
 </TouchableHighlight>
 <TouchableHighlight style={styles.navButton3}
-onPress={this.handleInfoPagePress}
+onPress={() => this.props.navigation.navigate('Asia')}
 >
 <Text style={styles.navButtonText}>
 Asia
 </Text>
 </TouchableHighlight>
 <TouchableHighlight style={styles.navButton4}
-onPress={this.handleInfoPagePress}
+onPress={() => this.props.navigation.navigate('Af')}
 >
 <Text style={styles.navButtonText}>
 AF
 </Text>
 </TouchableHighlight>
 <TouchableHighlight style={styles.navButton5}
-onPress={this.handleInfoPagePress}
+onPress={() => this.props.navigation.navigate('Ant')}
 >
 <Text style={styles.navButtonText}>
 ANT 
 </Text>
 </TouchableHighlight>
 <TouchableHighlight style={styles.navButton6}
-onPress={this.handleInfoPagePress}
+onPress={() => this.props.navigation.navigate('Aus')}
 >
 <Text style={styles.navButtonText}>
 AUS
 </Text>
 </TouchableHighlight>
 </View>
+
 <View style={styles.feed}>
 <ScrollView> 
 
@@ -115,8 +117,20 @@ ANGUILLA
 </Text>
 
 </ScrollView>
- </View> 
 
+ </View> 
+ <View style={styles.bottomNavbarContainer}>
+ <Text style={styles.caption}>
+Travel List 
+</Text>
+<TouchableHighlight
+              onPress={() => this.props.navigation.navigate('List')}
+            >
+<Image source ={{uri:'https://cdn2.iconfinder.com/data/icons/thin-line-color-1/21/11-512.png'}}
+ style={{ height: 40, width: 40 }}
+/>
+</TouchableHighlight>
+ </View> 
       </View>
     );
   }
@@ -132,7 +146,7 @@ const styles = StyleSheet.create({
 
 
   navbarContainer: {
-height: deviceHeight/9,
+height: deviceHeight/10,
 width: deviceWidth,
 backgroundColor: 'orange',
 flexDirection: 'row',
@@ -143,7 +157,7 @@ borderColor: 'black',
 },
 
 navButton: {
-height: deviceHeight/9,
+height: deviceHeight/10,
 width: deviceWidth/7,
 backgroundColor: '#ffd185',
 borderColor: 'brown',
@@ -153,7 +167,7 @@ justifyContent: 'center',
 margin: 0,
 },
 navButton1: {
-height: deviceHeight/9,
+height: deviceHeight/10,
 width: deviceWidth/7,
 backgroundColor: '#77d353',
 borderColor: 'brown',
@@ -163,7 +177,7 @@ justifyContent: 'center',
 margin: 0,
 },
 navButton2: {
-height: deviceHeight/9,
+height: deviceHeight/10,
 width: deviceWidth/7,
 backgroundColor: '#3ecfc9',
 borderColor: 'brown',
@@ -173,7 +187,7 @@ justifyContent: 'center',
 margin: 0,
 },
 navButton3: {
-height: deviceHeight/9,
+height: deviceHeight/10,
 width: deviceWidth/7,
 backgroundColor: '#e95ec0',
 borderColor: 'brown',
@@ -183,7 +197,7 @@ justifyContent: 'center',
 margin: 0,
 },
 navButton4: {
-height: deviceHeight/9,
+height: deviceHeight/10,
 width: deviceWidth/7,
 backgroundColor: '#b8977e',
 borderColor: 'brown',
@@ -193,7 +207,7 @@ justifyContent: 'center',
 margin: 0,
 },
 navButton5: {
-height: deviceHeight/9,
+height: deviceHeight/10,
 width: deviceWidth/7,
 backgroundColor: '#97cce4',
 borderColor: 'brown',
@@ -203,7 +217,7 @@ justifyContent: 'center',
 margin: 0,
 },
 navButton6: {
-height: deviceHeight/9,
+height: deviceHeight/10,
 width: deviceWidth/7,
 backgroundColor: '#ff9052',
 borderColor: 'brown',
@@ -223,10 +237,36 @@ alignItems:'center',
 
 
 },
+bottomNavbarContainer:{
+height: deviceHeight/10,
+width: deviceWidth,
+backgroundColor: 'orange',
+flexDirection: 'column',
+alignItems: 'center',
+justifyContent: 'right',
+borderBottomWidth: 5,
+borderColor: 'black',
+},
+feed:{
+height: 6*deviceHeight/10,
+width: deviceWidth,
+alignItems: 'center',
+justifyContent: 'center',
+textAlign:'center',
+},
+textContainer:{
+height: deviceHeight/9,
+width: deviceWidth,
 
+flexDirection: 'row',
+alignItems: 'center',
+justifyContent: 'center',
 
+},
    
 });
 
 
 export default Home;
+
+
